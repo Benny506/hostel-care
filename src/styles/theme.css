@@ -1,0 +1,87 @@
+/* Hostel Care: Premium Gold & Black Theme Tokens */
+
+:root {
+  --bg-black: #050505;
+  --bg-white: #FFFFFF;
+  --bg-sidebar: #0C0C0E;
+  --bg-header: rgba(255, 255, 255, 0.85);
+  --bg-workspace: #F8FAFC;
+  --bg-card: #0F0F12;
+  --bg-card-light: #FFFFFF;
+  --bg-card-alt: #16161A;
+  --primary-gold: #D4AF37;
+  --primary-gold-alt: #C5A028;
+  --text-white: #FFFFFF;
+  --text-dark: #0F172A;
+  --text-slate: #94A3B8;
+  --text-muted: #64748B;
+  --border-light: rgba(0, 0, 0, 0.08);
+
+  --glass-bg: rgba(10, 10, 10, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+
+  --gold-glow: rgba(212, 175, 55, 0.1);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #F9D976 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%) !important;
+  color: #050505 !important;
+  border: none !important;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.4);
+}
+
+.btn-outline-gold {
+  background: transparent !important;
+  color: var(--primary-gold) !important;
+  border: 2px solid var(--primary-gold) !important;
+  padding: 10px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+  background: var(--primary-gold) !important;
+  color: #050505 !important;
+}
+
+.border-gold {
+  border-color: var(--primary-gold) !important;
+}
+
+.bg-gold-glow {
+  background-color: var(--gold-glow) !important;
+}

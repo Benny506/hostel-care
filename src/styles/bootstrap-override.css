@@ -1,0 +1,100 @@
+:root {
+    /* Brand colors based on #D4AF37 (Gold) and #050505 (Black) */
+    --bs-primary: #D4AF37;
+    --bs-primary-rgb: 212, 175, 55;
+    --bs-primary-bg-subtle: rgba(212, 175, 55, 0.1);
+    --bs-primary-border-subtle: rgba(212, 175, 55, 0.2);
+    --bs-primary-text-emphasis: #F9D976;
+
+    /* Secondary: Slate 500 */
+    --bs-secondary: #64748b;
+    --bs-secondary-rgb: 100, 116, 139;
+    --bs-secondary-bg-subtle: #1e293b;
+    --bs-secondary-border-subtle: #334155;
+    --bs-secondary-text-emphasis: #94a3b8;
+
+    /* Success: Emerald 500 */
+    --bs-success: #10b981;
+    --bs-success-rgb: 16, 185, 129;
+
+    /* Danger: Red 500 */
+    --bs-danger: #ef4444;
+    --bs-danger-rgb: 239, 68, 68;
+
+    /* Warning: Amber 500 */
+    --bs-warning: #f59e0b;
+
+    /* Dark: Premium Black */
+    --bs-dark: #050505;
+    --bs-dark-rgb: 5, 5, 5;
+
+    --bs-body-bg: #050505;
+    --bs-body-color: #f8fafc;
+
+    --bs-border-radius: 0.75rem;
+    --bs-border-radius-lg: 1.25rem;
+    --bs-border-radius-2xl: 2.5rem;
+    
+    --bs-border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-bg: #C5A028;
+    --bs-btn-active-bg: #B8860B;
+    --bs-btn-color: #050505;
+    --bs-btn-hover-color: #050505;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-bg: var(--bs-primary);
+    --bs-btn-hover-color: #050505;
+}
+
+.form-control {
+    background-color: transparent;
+    border-color: var(--border-light);
+    color: var(--text-dark);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-gold) !important;
+    box-shadow: 0 0 0 0.25rem var(--gold-glow) !important;
+    background-color: transparent;
+    color: var(--text-dark);
+}
+
+.card {
+    background-color: var(--bg-card) !important;
+    border-color: var(--bs-border-color) !important;
+    border-radius: 1.25rem;
+}
+
+.badge {
+    padding: 0.5em 1em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.navbar-brand {
+    color: var(--bs-primary) !important;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Custom Table Styles for Dark Theme */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--bs-body-color);
+    --bs-table-border-color: var(--bs-border-color);
+}

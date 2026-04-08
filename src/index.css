@@ -1,0 +1,66 @@
+/* Hostel Care: Global CSS Entry Point */
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import './styles/bootstrap-override.css';
+@import './styles/font.css';
+@import './styles/theme.css';
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Custom UI Utilities */
+.text-gold { color: var(--primary-gold) !important; }
+.text-white { color: var(--text-white) !important; }
+.text-slate { color: var(--text-slate) !important; }
+
+.bg-black { background-color: var(--bg-black) !important; }
+.bg-card { background-color: var(--bg-card) !important; }
+.bg-gold { background-color: var(--primary-gold) !important; }
+
+.rounded-pill-2xl { border-radius: 100px; }
+
+.hover-glow:hover {
+  box-shadow: 0 0 40px var(--gold-glow);
+}
+
+.animate-pulse {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .6; }
+}
+
+.tracking-widest-xl { letter-spacing: 0.25em; }
+.shadow-gold { box-shadow: 0 12px 30px -10px rgba(212, 175, 55, 0.3) !important; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252525;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-gold);
+}
