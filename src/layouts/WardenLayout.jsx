@@ -7,7 +7,8 @@ import {
     HiOutlineLogout,
     HiMenuAlt2,
     HiOutlineUsers,
-    HiOutlineReply
+    HiOutlineReply,
+    HiOutlineUserCircle
 } from 'react-icons/hi'
 import { Offcanvas, Badge } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -20,6 +21,7 @@ const navItems = [
     { name: 'All Requests', icon: <HiOutlineViewGrid size={22} />, path: '/warden-dashboard/tickets' },
     { name: 'Notice Board', icon: <HiOutlineSpeakerphone size={22} />, path: '/warden-dashboard/announcements' },
     { name: 'Students', icon: <HiOutlineUsers size={22} />, path: '/warden-dashboard/residents' },
+    { name: 'My Profile', icon: <HiOutlineUserCircle size={22} />, path: '/warden-dashboard/profile' },
 ]
 
 export default function WardenLayout() {
@@ -144,7 +146,11 @@ export default function WardenLayout() {
                                 Hostel Staff
                             </span>
                         </div>
-                        <div className="avatar-circle d-flex align-items-center justify-content-center bg-gold bg-opacity-10 border border-gold border-opacity-20 text-gold fw-bold shadow-sm" style={{ width: '40px', height: '40px', borderRadius: '12px' }}>
+                        <div 
+                            className="avatar-circle d-flex align-items-center justify-content-center bg-gold bg-opacity-10 border border-gold border-opacity-20 text-gold fw-bold shadow-sm cursor-pointer hover-scale transition-all" 
+                            style={{ width: '40px', height: '40px', borderRadius: '12px' }}
+                            onClick={() => navigate('/warden-dashboard/profile')}
+                        >
                             <span style={{ fontSize: '14px', letterSpacing: '0.05em', color: 'black' }}>{userInitials}</span>
                         </div>
                     </div>
@@ -208,6 +214,9 @@ export default function WardenLayout() {
                         background: rgba(0, 0, 0, 0.1);
                         border-radius: 10px;
                     }
+                    .cursor-pointer { cursor: pointer; }
+                    .hover-scale { transition: transform 0.2s; }
+                    .hover-scale:hover { transform: scale(1.05); }
                 `}
             </style>
         </div>

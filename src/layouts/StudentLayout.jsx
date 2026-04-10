@@ -8,7 +8,8 @@ import {
     HiOutlineLogout,
     HiMenuAlt2,
     HiX,
-    HiOutlineReply
+    HiOutlineReply,
+    HiOutlineUserCircle
 } from 'react-icons/hi'
 import { Offcanvas, Button, Badge } from 'react-bootstrap'
 import { motion, AnimatePresence } from 'motion/react'
@@ -22,6 +23,7 @@ const navItems = [
     { name: 'My Requests', icon: <HiOutlineViewGrid size={22} />, path: '/student-dashboard/my-complaints' },
     { name: 'Report Issue', icon: <HiOutlinePlusCircle size={22} />, path: '/student-dashboard/new-complaint' },
     { name: 'Updates', icon: <HiOutlineSpeakerphone size={22} />, path: '/student-dashboard/announcements' },
+    { name: 'My Profile', icon: <HiOutlineUserCircle size={22} />, path: '/student-dashboard/profile' },
 ]
 
 export default function StudentLayout() {
@@ -146,7 +148,11 @@ export default function StudentLayout() {
                                 </span>
                             )}
                         </div>
-                        <div className="avatar-circle d-flex align-items-center justify-content-center bg-gold bg-opacity-10 border border-gold border-opacity-20 text-gold fw-bold shadow-sm" style={{ width: '40px', height: '40px', borderRadius: '12px' }}>
+                        <div 
+                            className="avatar-circle d-flex align-items-center justify-content-center bg-gold bg-opacity-10 border border-gold border-opacity-20 text-gold fw-bold shadow-sm cursor-pointer hover-scale transition-all" 
+                            style={{ width: '40px', height: '40px', borderRadius: '12px' }}
+                            onClick={() => navigate('/student-dashboard/profile')}
+                        >
                             <span style={{ fontSize: '14px', letterSpacing: '0.05em', color: 'black' }}>{userInitials}</span>
                         </div>
                     </div>
@@ -210,6 +216,9 @@ export default function StudentLayout() {
                         background: rgba(0, 0, 0, 0.1);
                         border-radius: 10px;
                     }
+                    .cursor-pointer { cursor: pointer; }
+                    .hover-scale { transition: transform 0.2s; }
+                    .hover-scale:hover { transform: scale(1.05); }
                 `}
             </style>
         </div>

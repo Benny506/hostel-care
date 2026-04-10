@@ -47,7 +47,10 @@ export default function Login() {
       }
 
       // 3. Complete Login if Profile exists
-      dispatch(loginSuccess({ user: { id: user.id, email: user.email }, role: profile.role }))
+      dispatch(loginSuccess({ 
+        user: { ...user, ...profile }, 
+        role: profile.role 
+      }))
       dispatch(addAlert({ type: 'success', message: `Welcome back, ${profile.full_name || 'Resident'}` }))
       navigate(profile.role === 'warden' ? '/warden-dashboard' : '/student-dashboard')
 

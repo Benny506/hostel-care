@@ -26,6 +26,7 @@ import WardenOverview from './pages/Warden/WardenOverview'
 import WardenComplaints from './pages/Warden/WardenComplaints'
 import WardenAnnouncements from './pages/Warden/WardenAnnouncements'
 import WardenStudents from './pages/Warden/WardenStudents'
+import Profile from './pages/Common/Profile'
 
 // Protection Guards
 import DashboardGuard from './components/Auth/DashboardGuard'
@@ -40,8 +41,11 @@ function App() {
             const { user, profile } = await authService.initializeAuth()
             
             if (user && profile) {
-                console.log('User verified.')
-                dispatch(loginSuccess({ user, role: profile.role }))
+                console.log('User verified:', profile.full_name)
+                dispatch(loginSuccess({ 
+                    user: { ...user, ...profile }, 
+                    role: profile.role 
+                }))
             } else {
                 dispatch(setInitChecked(true))
                 console.log('Unauthenticated visit.')
@@ -77,6 +81,7 @@ function App() {
             <Route path="my-complaints" element={<MyComplaints />} />
             <Route path="new-complaint" element={<FileComplaint />} />
             <Route path="announcements" element={<AnnouncementFeed />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
         </Route>
         
@@ -87,6 +92,7 @@ function App() {
             <Route path="tickets" element={<WardenComplaints />} />
             <Route path="announcements" element={<WardenAnnouncements />} />
             <Route path="residents" element={<WardenStudents />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
         </Route>
 
